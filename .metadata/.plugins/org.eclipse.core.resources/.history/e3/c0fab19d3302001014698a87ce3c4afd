@@ -1,0 +1,46 @@
+package main;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		System.out.println("===========[TESTING BANK ACCOUNT]===========");
+	
+		//A spacer line.
+		System.out.println();
+		
+		//Creating my new cool bank account.
+		BankAccount bankAcc = new BankAccount("Alex", "Carpenter", 42069);
+		
+		//Making a million dollar deposit, followed by a 999,999.00 withdrawal.
+		bankAcc.Deposit(1000000.00);
+		bankAcc.Withdraw(999999.00);
+		
+		//Printing bank info to see that I do have $1 left. :(
+		bankAcc.PrintAccountInfo();
+		
+		//A spacer line.
+		System.out.println();
+		
+		System.out.println("===========[TESTING CHECKING ACCOUNT]===========");
+
+		//A spacer line.
+		System.out.println();
+		
+		//Creating a new checking account for myself.
+		CheckingAccount checkAcc = new CheckingAccount("Alex", "Carpenter", 1337, 1.3);
+		
+		//Depositing 100.25 into my checking account.
+		checkAcc.Deposit(100.25);
+		
+		//Withdrawing 150 to test the overdraft.
+		checkAcc.WithdrawAmount(150);
+		
+		//A spacer line, as the overdraft warning should appear.
+		System.out.println();
+		
+		//Displaying my final checking account details.
+		checkAcc.DisplayAccount();
+	}
+
+}

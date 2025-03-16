@@ -1,0 +1,28 @@
+package main;
+
+public class CheckingAccount extends BankAccount {
+	
+	double interest;
+	final int overdraftFee = 30;
+	
+	public CheckingAccount(String firstNameToBe, String lastNameToBe, int IDToBe, double interestToBe) {
+		super(firstNameToBe, lastNameToBe, IDToBe);
+		this.interest = interestToBe;
+	}
+	
+	public void WithdrawAmount(double amount) {
+		if(amount > GetBalance()) {
+			Withdraw(amount + overdraftFee);
+			System.out.println("A $30 overdraft fee has been applied!");
+		} else {
+			Withdraw(amount);
+		}
+		System.out.println("Balance after withdrawal: $" + GetBalance());
+	}
+	
+	public void DisplayAccount() {
+		PrintAccountInfo();
+		System.out.println("Interest Rate of Account: " + interest + "%");
+	}
+	
+}
