@@ -17,26 +17,37 @@ public class BankAccount {
 	}
 	
 	//Deposit function that adds to the current balance.
-	public void Deposit(double toDeposit) { this.balance += toDeposit; }
+	public void deposit(double toDeposit) { 
+		if (toDeposit < 0) {
+		    System.out.println("Error: Deposit must be a positive number!");
+		    return;
+		} else {
+			this.balance += toDeposit;
+		}
+	}
 	
 	//Withdraw function that subtracts from the current balance.
-	public void Withdraw(double toWithdraw) {
-		this.balance -= toWithdraw;
+	public void withdraw(double toWithdraw) {
+		if (toWithdraw > balance) {
+		    System.out.println("Error: Insufficient funds!");
+		} else {
+			this.balance -= toWithdraw;
+		}
 	}
 	
 	//Setters.
-	public void SetFirstName(String firstNameToBe) { this.firstName = firstNameToBe; }
-	public void SetLastName(String lastNameToBe) { this.lastName = lastNameToBe; }
-	public void SetAccountID(int IDToBe) { this.accountID = IDToBe; }
+	public void setFirstName(String firstNameToBe) { this.firstName = firstNameToBe; }
+	public void setLastName(String lastNameToBe) { this.lastName = lastNameToBe; }
+	public void setAccountID(int IDToBe) { this.accountID = IDToBe; }
 	
 	//Getters.
-	public String GetFirstName() { return this.firstName; }
-	public String GetLastName() { return this.lastName; }
-	public int GetAccountID() { return this.accountID; }
-	public double GetBalance() { return this.balance; }
+	public String getFirstName() { return this.firstName; }
+	public String getLastName() { return this.lastName; }
+	public int getAccountID() { return this.accountID; }
+	public double getBalance() { return this.balance; }
 	
 	//A function that prints all the account information.
-	public void PrintAccountInfo() {
+	public void printAccountInfo() {
 		System.out.println("Bank Account of: "+this.firstName+" "+this.lastName);
 		System.out.println("Account ID: " + this.accountID);
 		System.out.println("Current Balance: " + this.balance);

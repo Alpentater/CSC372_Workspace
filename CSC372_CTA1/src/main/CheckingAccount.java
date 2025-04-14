@@ -16,22 +16,25 @@ public class CheckingAccount extends BankAccount {
 	}
 	
 	//A function that withdraws from checking account.
-	public void WithdrawFromChecking(double amountToWithdraw) {
+	public void withdrawFromChecking(double amountToWithdraw) {
 		//Checks to see if the amount being withdrawn is greater than the current balance...
-		if(amountToWithdraw > GetBalance()) {
+		if(amountToWithdraw > getBalance()) {
 			//...if it is, apply the overdraft fee.
-			Withdraw(amountToWithdraw + overdraftFee);
+			withdraw(amountToWithdraw + overdraftFee);
 			System.out.println("A $30 overdraft fee has been applied!");
+		} else if (amountToWithdraw < 0){
+			    System.out.println("Error: Withdrawal amount must be positive.");
+			    return;
 		} else {
 			//...if it is not, withdraw without an overdraft fee.
-			Withdraw(amountToWithdraw);
+			withdraw(amountToWithdraw);
 		}
-		System.out.println("Balance after withdrawal: $" + GetBalance());
+		System.out.println("Balance after withdrawal: $" + getBalance());
 	}
 	
 	//Display bank info with the addition of the checking accounts interest rate.
-	public void DisplayAccount() {
-		PrintAccountInfo();
+	public void displayAccount() {
+		printAccountInfo();
 		System.out.println("Interest Rate of Checking Account: " + interest + "%");
 	}
 	
