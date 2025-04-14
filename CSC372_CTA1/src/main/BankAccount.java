@@ -3,7 +3,7 @@ package main;
 public class BankAccount {
 	
 	//Variables/Components of a bank account.
-	String firstName;
+	private String firstName;
 	String lastName;
 	int accountID;
 	double balance;
