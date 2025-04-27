@@ -1,0 +1,15 @@
+Student Name: Alex
+Student Address: 432 Front Beach Rd
+Student GPA: 3.0
+
+Student Name: Elijah
+Student Address: 34 Yew Ln
+Student GPA: 2.2
+
+Student Name: Glorp
+Student Address: 86 Neep Narp St
+Student GPA: 3.95
+
+Student Name: Jim
+Student Address: 1337 Leet Ave
+Student GPA: 2.5
